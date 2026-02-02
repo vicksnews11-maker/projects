@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: backend
-        image: YOUR_DOCKERHUB/shaikgpt-backend:latest
+        image: shaikgpt-backend:latest   # Use your local image
+        imagePullPolicy: IfNotPresent    # Don't try to pull from Docker Hub
         ports:
         - containerPort: 8000
         envFrom:
@@ -31,3 +32,4 @@ spec:
   ports:
   - port: 8000
     targetPort: 8000
+  type: ClusterIP   # default, can change to NodePort if you want external access

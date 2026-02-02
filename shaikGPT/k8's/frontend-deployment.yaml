@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: YOUR_DOCKERHUB/shaikgpt-frontend:latest
+        image: shaikgpt-frontend:latest   # Use your local image
+        imagePullPolicy: IfNotPresent     # Don't try to pull from Docker Hub
         ports:
         - containerPort: 3000
 ---
@@ -28,3 +29,4 @@ spec:
   ports:
   - port: 3000
     targetPort: 3000
+  type: NodePort   # allows access from browser via Minikube/Docker Desktop
