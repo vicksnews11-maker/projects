@@ -13,3 +13,9 @@ class Chat(Base):
     user_id = Column(Integer, ForeignKey("users.id"))
     message = Column(Text)
     response = Column(Text)
+
+class Chat(Base):
+    __tablename__ = "chats"
+    id = Column(Integer, primary_key=True)
+    prompt = Column(Text)
+    response = Column(Text)
