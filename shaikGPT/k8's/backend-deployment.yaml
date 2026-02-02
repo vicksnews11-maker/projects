@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shaikgpt-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shaikgpt-backend
+  template:
+    metadata:
+      labels:
+        app: shaikgpt-backend
+    spec:
+      containers:
+      - name: backend
+        image: YOUR_DOCKERHUB/shaikgpt-backend:latest
+        ports:
+        - containerPort: 8000
+        envFrom:
+        - secretRef:
+            name: shaikgpt-secrets
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shaikgpt-backend
+spec:
+  selector:
+    app: shaikgpt-backend
+  ports:
+  - port: 8000
+    targetPort: 8000

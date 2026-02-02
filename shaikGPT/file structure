@@ -1,6 +1,19 @@
 shaikgpt/
- ├── backend/
- ├── frontend/
+ └── backend/
+      ├── main.py
+      ├── models.py
+      ├── database.py
+      ├── Dockerfile
+      └── requirements.txt
+ |
+ └── frontend/
+      ├── pages/
+      │    └── index.js
+      ├── styles/
+      │    └── globals.css
+      ├── package.json
+      └── Dockerfile
+
  ├── k8s/
  │    ├── frontend-deployment.yaml
  │    ├── backend-deployment.yaml
@@ -8,3 +21,31 @@ shaikgpt/
  │    ├── ingress.yaml
  │    └── secrets.yaml
  └── docker-compose.yml (only for local test)
+
+-------------------------------------------------
+Roadmap (K8s Style)
+PHASE 1 – App
+
+✔ Backend API
+✔ Frontend UI
+
+PHASE 2 – Containerize
+
+✔ Dockerfile
+✔ Images pushed to DockerHub
+
+PHASE 3 – Kubernetes
+
+✔ Deployments
+✔ Services
+✔ Ingress
+✔ Secrets
+✔ PVC
+
+PHASE 4 – Production
+
+✔ TLS
+✔ Autoscaling
+✔ Logging
+✔ Monitoring 
+------------------------------------------

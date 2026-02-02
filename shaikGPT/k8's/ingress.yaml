@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: shaikgpt-ingress
+spec:
+  rules:
+  - host: shaikgpt.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: shaikgpt-frontend
+            port:
+              number: 3000
