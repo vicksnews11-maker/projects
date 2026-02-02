@@ -1,0 +1,10 @@
+shaikgpt/
+ ├── backend/
+ ├── frontend/
+ ├── k8s/
+ │    ├── frontend-deployment.yaml
+ │    ├── backend-deployment.yaml
+ │    ├── postgres.yaml
+ │    ├── ingress.yaml
+ │    └── secrets.yaml
+ └── docker-compose.yml (only for local test)
