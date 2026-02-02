@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ToDo App</title>
+</head>
+<body>
+  <h1>Simple ToDo App</h1>
+
+  <input type="text" id="todo-input" placeholder="Enter todo">
+  <button onclick="addTodo()">Add ToDo</button>
+
+  <ul id="todo-list"></ul>
+
+  <script>
+    const API_URL = "http://todo-backend-service:3000"; // Kubernetes service name
+
+    async function fetchTodos() {
+      const res = await fetch(`${API_URL}/todos`);
+      const todos = await res.json();
+      const list = document.getElementById("todo-list");
+      list.innerHTML = "";
+      todos.forEach(todo => {
+        const li = document.createElement("li");
+        li.textContent = todo.title + (todo.completed ? " ✅" : "");
+        list.appendChild(li);
+      });
+    }
+
+    async function addTodo() {
+      const input = document.getElementById("todo-input");
+      const title = input.value;
+      if (!title) return alert("Enter a todo!");
+      await fetch(`${API_URL}/todos`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title, completed: false })
+      });
+      input.value = "";
+      fetchTodos();
+    }
+
+    fetchTodos();
+  </script>
+</body>
+</html>
