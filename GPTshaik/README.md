@@ -184,4 +184,8 @@ kubectl logs <pod> -n gptshaik # View pod logs
 kubectl delete -f k8s/        # Delete all
 ```
 Output result
+<img width="1918" height="878" alt="image" src="https://github.com/user-attachments/assets/49e37f0d-e93d-47da-b3a9-d61235a7f976" />
+
+<img width="1918" height="873" alt="image" src="https://github.com/user-attachments/assets/ab300487-ecdb-48c6-a25c-00a03b15bca2" />
+
 <img width="1707" height="977" alt="image" src="https://github.com/user-attachments/assets/967f66fe-d98b-4631-b3b9-1ba7ad1da900" />
