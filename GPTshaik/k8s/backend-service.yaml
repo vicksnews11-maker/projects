@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gptshaik-backend-service
+  namespace: gptshaik
+  labels:
+    app: gptshaik
+    tier: backend
+spec:
+  type: ClusterIP
+  selector:
+    app: gptshaik
+    tier: backend
+  ports:
+  - port: 5000
+    targetPort: 5000
+    protocol: TCP

@@ -1,0 +1,22 @@
+📁 gptshaik/
+├── 📁 frontend/
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   ├── Dockerfile
+│   └── nginx.conf
+├── 📁 backend/
+│   ├── app.py
+│   ├── requirements.txt
+│   └── Dockerfile
+├── 📁 k8s/
+│   ├── namespace.yaml
+│   ├── secret.yaml
+│   ├── configmap.yaml
+│   ├── backend-deployment.yaml
+│   ├── backend-service.yaml
+│   ├── frontend-deployment.yaml
+│   ├── frontend-service.yaml
+│   └── ingress.yaml
+└── docker-compose.yaml (for local testing)
+cd Project/projects/GPTshaik/

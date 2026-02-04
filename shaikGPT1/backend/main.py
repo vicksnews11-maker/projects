@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from database import Base, engine, SessionLocal
-from models import User, Chat
+from models import Base, User, Chat
 from passlib.context import CryptContext
 import os
 from openai import OpenAI

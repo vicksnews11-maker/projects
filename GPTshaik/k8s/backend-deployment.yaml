@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gptshaik-backend
+  namespace: gptshaik
+  labels:
+    app: gptshaik
+    tier: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gptshaik
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: gptshaik
+        tier: backend
+    spec:
+      containers:
+      - name: backend
+        image: gptshaik-backend:v1.0
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
+        env:
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: openai-secret
+              key: OPENAI_API_KEY
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "300m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 10
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10

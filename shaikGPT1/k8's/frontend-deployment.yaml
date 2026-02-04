@@ -29,4 +29,5 @@ spec:
   ports:
   - port: 3000
     targetPort: 3000
-  type: NodePort   # allows access from browser via Minikube/Docker Desktop
+  type: ClusterIP   # allows access from browser via Minikube/Docker Desktop
+

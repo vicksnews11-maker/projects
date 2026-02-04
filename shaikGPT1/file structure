@@ -9,19 +9,19 @@ shaikgpt/
  └── frontend/
       ├── pages/
       │    └── index.js
+      |    └── _app.js
       ├── styles/
       │    └── globals.css
       ├── package.json
       └── Dockerfile
 
- ├── k8s/
- │    ├── frontend-deployment.yaml
- │    ├── backend-deployment.yaml
- │    ├── postgres.yaml
- │    ├── ingress.yaml
- │    └── secrets.yaml
- └── docker-compose.yml (only for local test)
-
+ └── k8s/
+      ├── frontend-deployment.yaml
+      ├── backend-deployment.yaml
+      ├── postgres.yaml
+      ├── ingress.yaml
+      └── secrets.yaml
+      └── .env---------for save the API keys
 -------------------------------------------------
 Roadmap (K8s Style)
 PHASE 1 – App
